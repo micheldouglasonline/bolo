@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <!-- 
+      *** NOTAS IMPORTANTES PARA DEPLOY (Vercel & Netlify) ***
+
+      Se a aplicação não está funcionando online ("página em branco" ou erros), 
+      siga estes passos:
+
+      1. VARIÁVEL DE AMBIENTE (OBRIGATÓRIO):
+         - Vá até as configurações do seu projeto no site da Vercel ou Netlify.
+         - Adicione uma Variável de Ambiente chamada `API_KEY` com a sua chave da API do Gemini.
+         - A aplicação VAI FALHAR sem esta chave.
+
+      2. CONFIGURAÇÃO PARA O NETLIFY:
+         - O Netlify precisa de uma configuração para lidar com aplicações de página única (SPA).
+         - Crie um arquivo chamado `netlify.toml` na raiz do seu projeto.
+         - Copie e cole o seguinte conteúdo nele:
+      
+           [build]
+             command = "npm run build"
+             publish = "dist"
+
+           [[redirects]]
+             from = "/*"
+             to = "/index.html"
+             status = 200
+
+    -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerador de Receitas de Bolo | Crie Sabores Incríveis</title>
